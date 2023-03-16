@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/Roboto/Roboto-Regular.ttf';
+import './fonts/Roboto/Roboto-Bold.ttf';
+import './fonts/BethEllen/BethEllen-Regular.ttf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
