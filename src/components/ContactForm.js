@@ -53,7 +53,7 @@ export const Contact = () => {
                         label="Name"
                         variant="outlined"
                         color="secondary"
-                        required
+                        // required
                         error={nameError}
                     >
                     </TextField>
@@ -62,7 +62,7 @@ export const Contact = () => {
                         label="Email"
                         variant="outlined"
                         color="secondary"
-                        required
+                        // required
                         error={emailError}
                     >
                     </TextField>
@@ -74,7 +74,7 @@ export const Contact = () => {
                         color="secondary"
                         multiline
                         rows={6}
-                        required
+                        // required
                         error={messageError}
                     >
                     </TextField>

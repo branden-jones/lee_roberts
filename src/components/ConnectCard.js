@@ -12,7 +12,6 @@ import ContactForm from './ContactForm';
 export default function ConnectCard() {
     return (
         <div color="primary">
-            <Modal>
                 <Card raised={true}>
                     <CardHeader
                         action={
@@ -25,7 +24,6 @@ export default function ConnectCard() {
                         <ContactForm />
                     </CardContent>
                 </Card>
-            </Modal>
         </div>
     )
 };

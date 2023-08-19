@@ -19,6 +19,18 @@ const myTheme = createTheme({
       main: '#ffc400',
       light: '#ffcf33'
     }
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          maxWidth: '55rem',
+          margin: '2rem',
+        }
+      }
+    },
+    MuiButton: {
+    }
   }
   });
 
