@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
 
 // Material UI
-import { AppBar, Box, Toolbar, IconButton, Typography, Button, MenuItem } from "@mui/material";
+import { AppBar, Box, Toolbar, Button, Typography } from "@mui/material";
 import myTheme from "../Themes/mainTheme";
 import { ThemeProvider } from "@mui/material/styles"; 
 
@@ -10,7 +9,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 // Components
-import ConnectCard from './ConnectCard';
 import SideBar from "./SideBar";
 
 
@@ -30,16 +28,16 @@ export default function NavBar(){
         setDrawerState({ ...drawerState, [anchor]: openStatus })
     }
 
-    const list = (anchor) => {
-        <Box
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-            // role='presentation'
-            onClick={() => toggleDrawer(anchor, false)} //this is where i will put the redirect
-            onKeyDown={() => toggleDrawer(anchor, false)}
-        >
+    // const list = (anchor) => {
+    //     <Box
+    //         sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+    //         // role='presentation'
+    //         onClick={() => toggleDrawer(anchor, false)} //this is where i will put the redirect
+    //         onKeyDown={() => toggleDrawer(anchor, false)}
+    //     >
             
-        </Box>
-    }
+    //     </Box>
+    // }
     return (
         <>
             <ThemeProvider theme={myTheme}>
@@ -53,25 +51,6 @@ export default function NavBar(){
                             >{<MenuRoundedIcon />}
                             </Button>
                             <SideBar openStatus={drawerState} />
-                            {/* <Drawer
-                                open={drawerState.left}
-                                direction={'left'}
-                                onClose={() => setDrawerState({ left: false })}
-                                
-                            >
-                                <List>
-                                    {linkNames.map((el,idx) => (
-                                        <ListItem key={idx} disablePadding>
-                                            <ListItemButton>
-                                                <ListItemIcon>
-                                                    {linkComponents[idx]}
-                                                </ListItemIcon>
-                                                <ListItemText primary={el} />
-                                            </ListItemButton>
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Drawer> */}
                             <Typography
                                 variant="h2"
                                 component="h4"

@@ -6,7 +6,7 @@ import NavBar from './components/NavBar';
 import ConnectCard from './components/ConnectCard';
 import myTheme from './Themes/mainTheme';
 import { ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
