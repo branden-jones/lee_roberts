@@ -4,38 +4,9 @@ import Home from './components/pages/Home';
 import About from './components/pages/About'; 
 import NavBar from './components/NavBar';
 import ConnectCard from './components/ConnectCard';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import myTheme from './components/pages/Themes/mainTheme';
+import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-const myTheme = createTheme({
-  palette: {
-    primary: {
-      light: '#347055',
-      main: '#024D2B',
-      dark:'#01351e'
-    },
-    secondary: {
-      dark: '#b28900',
-      main: '#ffc400',
-      light: '#ffcf33'
-    }
-  },
-  components: {
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          maxWidth: '55rem',
-          margin: '2rem',
-        }
-      }
-    },
-    MuiButton: {
-    }
-  }
-  });
-
-
-
 
 function App() {
   return (
@@ -46,7 +17,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<ConnectCard />} />
+            <Route path='/connect' element={<ConnectCard />} />
           </Routes>
         </main>
       </BrowserRouter>

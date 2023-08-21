@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // Material UI
 import { AppBar, Box, Toolbar, IconButton, Typography, Button, MenuItem, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
+import myTheme from "./pages/Themes/mainTheme";
 
 // Icons
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -15,8 +16,6 @@ import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact
 import ConnectCard  from './ConnectCard';
 
 
-// const 
-
 export default function NavBar(){
     const [drawerState, setDrawerState] = useState({
         top: false,
@@ -24,7 +23,7 @@ export default function NavBar(){
         bottom: false,
         left: false
     });
-    console.log(`Drawer`, drawerState)
+
     const toggleDrawer = (anchor, openStatus) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
@@ -32,7 +31,11 @@ export default function NavBar(){
 
         setDrawerState({ ...drawerState, [anchor]: openStatus })
     }
-    
+
+    const linkNames = ['Home', 'About', 'Connect']
+
+    const linkComponents = [<HomeIcon />, <InfoIcon />, <ConnectWithoutContactIcon />]
+
     const list = (anchor) => {
         <Box
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -40,23 +43,12 @@ export default function NavBar(){
             onClick={() => toggleDrawer(anchor, false)} //this is where i will put the redirect
             onKeyDown={() => toggleDrawer(anchor, false)}
         >
-            <List>
-                {['Home', 'About', 'Connect'].map((text) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {<HomeIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+            
         </Box>
     }
     return (
         <>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ background: 'secondary', color: 'primary', flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar>
                         <Button
@@ -69,7 +61,20 @@ export default function NavBar(){
                             open={drawerState.left}
                             direction={'left'}
                             onClose={() => setDrawerState({ left: false })}
-                        >{list('left')}
+                            
+                        >
+                            <List sx={{ background: 'secondary', color: 'primary', flexGrow: 1 }}>
+                                {linkNames.map((el,idx) => (
+                                    <ListItem key={idx} disablePadding sx={{ background: 'secondary', color: 'primary', flexGrow: 1 }}>
+                                        <ListItemButton>
+                                            <ListItemIcon>
+                                                {linkComponents[idx]}
+                                            </ListItemIcon>
+                                            <ListItemText primary={el} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                ))}
+                            </List>
                         </Drawer>
                         <Typography
                             variant="h2"
