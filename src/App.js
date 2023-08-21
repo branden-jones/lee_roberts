@@ -1,10 +1,10 @@
 import './App.css';
 // pages
-import Home from './components/pages/Home'; 
-import About from './components/pages/About'; 
+import Home from './Pages/Home'; 
+import About from './Pages/About'; 
 import NavBar from './components/NavBar';
 import ConnectCard from './components/ConnectCard';
-import myTheme from './components/pages/Themes/mainTheme';
+import myTheme from './Themes/mainTheme';
 import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
