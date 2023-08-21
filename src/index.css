@@ -1,6 +1,23 @@
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: local('Roboto-Bold'),url('./fonts/Roboto/Roboto-Bold.ttf'),format('truetype')
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: local('Roboto-Regular'),url('./fonts/Roboto/Roboto-Regular.ttf'),format('truetype');
+}
+@font-face {
+  font-family: 'BethEllen-Regular';
+  src: local('BethEllen-Regular'),url('./fonts/BethEllen/BethEllen-Regular.ttf'),format('truetype');
+}
+@font-face {
+  font-family: 'SCRIPTIN';
+  src: local('SCRIPTIN'),url('./fonts/Scriptina/SCRIPTIN.ttf'),format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
